@@ -4,6 +4,7 @@ import com.sun.javafx.binding.StringFormatter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public abstract class People <PersonType extends Person> implements Iterable<PersonType> {
@@ -51,5 +52,10 @@ public abstract class People <PersonType extends Person> implements Iterable<Per
 
     public List<PersonType> findAll(){
         return personList;
+    }
+
+    @Override
+    public Iterator<PersonType> iterator() {
+        return this.personList.iterator();
     }
 }
